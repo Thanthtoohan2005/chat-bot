@@ -37,7 +37,7 @@ def get_answer_for_question(question: str, knowledge_base: dict) -> str | None:
     return None
 
 def chat_bot():
-    knowledge_base: dict = load_knowledge_base('\knowledge_base.json')
+    knowledge_base: dict = load_knowledge_base('knowledge_base.json')
     random_responses = [
         "Hmm, interesting. But I don't know how to answer that question. Can teach me on how to respond?",
         "I'm not entirely sure, could you teach me how to answer that?",
@@ -65,7 +65,7 @@ def chat_bot():
 
             if new_answer.lower() != 'skip':
                 knowledge_base["question"].append({"question": sanitized_input, "answer": new_answer})
-                save_knowledge_base('\knowledge_base.json', knowledge_base)
+                save_knowledge_base('knowledge_base.json', knowledge_base)
                 print("Bot: Thank you! I learned a new response")
 
 if __name__ == "__main__":
